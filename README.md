@@ -14,7 +14,7 @@ This implementation is faster than pytorch's native cublas-based matmul on >50% 
 <p align="left">
   <img src="benchmark.png" />
 </p>
-On 70% sparsity the speedup is almost 2× than cublas. 
+On 70% sparsity the speedup is almost 2× than cublas under large dimensions. 
 
 Related Work
 ---
