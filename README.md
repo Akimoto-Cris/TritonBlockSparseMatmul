@@ -18,7 +18,5 @@ On 70% sparsity the speedup is almost 2× than cublas.
 
 Related Work
 ---
-HuggingFace implemented a [blocksparse gemm kernel earlier](https://github.com/huggingface/pytorch_block_sparse) based on CUTLASS, but unfortunately the speedup isn't satisfactory yet for 50% sparsity. 
-
-OpenAI also implemented [one for tensorflow](https://github.com/openai/blocksparse), Pytorch support is unfortunately not available. 
-
+- HuggingFace implemented a [blocksparse gemm kernel earlier](https://github.com/huggingface/pytorch_block_sparse) based on CUTLASS, but unfortunately the speedup isn't satisfactory yet for 50% sparsity. 
+- OpenAI also implemented [one for tensorflow](https://github.com/openai/blocksparse), Pytorch support is unfortunately not available. 
