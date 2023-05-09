@@ -4,6 +4,10 @@ A matmul kernel with block-sparsity based on [OpenAI-Triton's Matmul](https://gi
 
 Currently, it's required to build triton-2.1.0 from source to use the newest block pointer. 
 
+Basic Idea
+---
+Skip the pruned blocks along K-axis in `B` when loading. To avoid conditionals inside kernel, we precompute the skiping strides from the B-mask outside the kernel, which can be reused for different input `A`s. 
+
 Benchmarking 
 ---
 Below is a comparison with Pytorch native cublas-based matmul on the throughput on A100, when `BLOCK_SIZE_M=128`, `BLOCK_SIZE_K=32` and `BLOCK_SIZE_N=64`. 
