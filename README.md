@@ -10,12 +10,11 @@ Skip the pruned blocks along K-axis in `B` when loading. To avoid conditionals i
 
 Benchmarking 
 ---
-Below is a comparison with Pytorch native cublas-based matmul on the throughput on A100, when `BLOCK_SIZE_M=128`, `BLOCK_SIZE_K=32` and `BLOCK_SIZE_N=64`. 
+This implementation is faster than pytorch's native cublas-based matmul on >50% block-sparsity on A100, when `BLOCK_SIZE_M=128`, `BLOCK_SIZE_K=32` and `BLOCK_SIZE_N=64`, 
 <p align="left">
   <img src="benchmark.png" />
 </p>
-
-This implementation is faster than pytorch on >50% block-sparsity, which improves from [huggingface implementation](https://github.com/huggingface/pytorch_block_sparse/).
+On 70% sparsity the speedup is almost 2× than cublas. 
 
 Related Work
 ---
