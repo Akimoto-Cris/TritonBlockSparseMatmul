@@ -7,10 +7,11 @@ Currently, it's required to build triton-2.1.0 from source to use the newest blo
 Benchmarking 
 ---
 Below is a comparison with Pytorch native cublas-based matmul on the throughput on A100, when `BLOCK_SIZE_M=128`, `BLOCK_SIZE_K=32` and `BLOCK_SIZE_N=64`. 
-<p align="center">
+<p align="left">
   <img src="benchmark.png" />
 </p>
-This implementation is faster than pytorch on >50% block-sparsity, which improves from the [huggingface's implementation](https://github.com/huggingface/pytorch_block_sparse)
+
+This implementation is faster than pytorch on >50% block-sparsity, which improves from [huggingface implementation](https://github.com/huggingface/pytorch_block_sparse/).
 
 Related Work
 ---
