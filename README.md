@@ -20,3 +20,8 @@ Related Work
 ---
 - HuggingFace implemented a [blocksparse gemm kernel earlier](https://github.com/huggingface/pytorch_block_sparse) based on CUTLASS, but unfortunately the speedup isn't satisfactory yet for 50% sparsity. 
 - OpenAI also implemented [one for tensorflow](https://github.com/openai/blocksparse), Pytorch support is unfortunately not available. 
+
+
+Limitations
+---
+At the moment (Jun 23) triton gemm kernels seems still suffering from [high CPU overhead](https://github.com/openai/triton/issues/1237), although GPU time shows good results, the real performance during real batched inference application may still be sub-optimal compared to cuBlas. 
